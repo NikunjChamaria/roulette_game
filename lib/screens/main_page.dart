@@ -27,7 +27,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   void initState() {
-    //playintromusin();
+    playintromusin();
     super.initState();
     _controllerCenter =
         ConfettiController(duration: const Duration(seconds: 10));
@@ -55,18 +55,11 @@ class _MainPageState extends State<MainPage> {
     final halfWidth = size.width / 2;
     final rectWidth = size.width / 2.5;
     final rectHeight = size.width / 10;
-
-    // Move to the top-left corner of the rectangle
     path.moveTo(halfWidth - rectWidth / 2, 0);
-
-    // Draw the rectangle
     path.lineTo(halfWidth + rectWidth / 2, 0);
     path.lineTo(halfWidth + rectWidth / 2, rectHeight);
     path.lineTo(halfWidth - rectWidth / 2, rectHeight);
-
-    // Close the path to form a rectangle
     path.close();
-
     return path;
   }
 
@@ -109,10 +102,7 @@ class _MainPageState extends State<MainPage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF00796B),
-              Color(0xFF004D40)
-            ], // Adjust color codes as needed
+            colors: [Color(0xFF00796B), Color(0xFF004D40)],
           ),
         ),
         child: Padding(
@@ -182,8 +172,7 @@ class _MainPageState extends State<MainPage> {
                                 animateFirst: false,
                                 indicators: [
                                   FortuneIndicator(
-                                    alignment: Alignment
-                                        .center, // <-- changing the position of the indicator
+                                    alignment: Alignment.center,
                                     child: MyWheelIndicator(
                                       onTap: () {
                                         _handleIndicatorTap();
@@ -324,18 +313,17 @@ class _MainPageState extends State<MainPage> {
                                                           _controllerCenter,
                                                       blastDirectionality:
                                                           BlastDirectionality
-                                                              .explosive, // don't specify a direction, blast randomly
-                                                      shouldLoop:
-                                                          true, // start again as soon as the animation is finished
+                                                              .explosive,
+                                                      shouldLoop: true,
                                                       colors: const [
                                                         Colors.green,
                                                         Colors.blue,
                                                         Colors.pink,
                                                         Colors.orange,
                                                         Colors.purple
-                                                      ], // manually specify the colors to be used
+                                                      ],
                                                       createParticlePath:
-                                                          drawConfetti, // define a custom shape/path.
+                                                          drawConfetti,
                                                     ),
                                                   ),
                                                   Align(
@@ -346,18 +334,17 @@ class _MainPageState extends State<MainPage> {
                                                           _controllerCenter,
                                                       blastDirectionality:
                                                           BlastDirectionality
-                                                              .explosive, // don't specify a direction, blast randomly
-                                                      shouldLoop:
-                                                          true, // start again as soon as the animation is finished
+                                                              .explosive,
+                                                      shouldLoop: true,
                                                       colors: const [
                                                         Colors.green,
                                                         Colors.blue,
                                                         Colors.pink,
                                                         Colors.orange,
                                                         Colors.purple
-                                                      ], // manually specify the colors to be used
+                                                      ],
                                                       createParticlePath:
-                                                          drawConfetti, // define a custom shape/path.
+                                                          drawConfetti,
                                                     ),
                                                   ),
                                                 ],
