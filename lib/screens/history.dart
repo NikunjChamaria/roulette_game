@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:roulette_game/utils/textstyle.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -27,7 +28,7 @@ class _HistoryPageState extends State<HistoryPage> {
         body: Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
+      padding: EdgeInsets.symmetric(vertical: 40.h, horizontal: 20.w),
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -44,7 +45,7 @@ class _HistoryPageState extends State<HistoryPage> {
           children: [
             Text(
               "Your History",
-              style: lobster(Colors.white, 30, FontWeight.bold),
+              style: lobster(Colors.white, 30.sp, FontWeight.bold),
             ),
             const SizedBox(
               height: 20,
@@ -62,8 +63,8 @@ class _HistoryPageState extends State<HistoryPage> {
                             return Padding(
                               padding: const EdgeInsets.symmetric(vertical: 5),
                               child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10, horizontal: 15),
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 10.h, horizontal: 15.w),
                                 decoration: ShapeDecoration(
                                   gradient: const LinearGradient(
                                     begin: Alignment(0.00, -1.00),
@@ -80,7 +81,7 @@ class _HistoryPageState extends State<HistoryPage> {
                                 child: Text(
                                   snapshot.data![index],
                                   style: spacegrotesk(
-                                      Colors.black, 18, FontWeight.normal),
+                                      Colors.black, 18.sp, FontWeight.normal),
                                 ),
                               ),
                             );

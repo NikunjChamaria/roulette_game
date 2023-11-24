@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:roulette_game/screens/history.dart';
 import 'package:roulette_game/utils/textstyle.dart';
@@ -115,7 +116,7 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 40),
+          padding: EdgeInsets.symmetric(vertical: 40.h),
           child: Column(
             children: [
               Row(
@@ -123,14 +124,14 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   Image.asset(
                     "assets/logo.png",
-                    height: 80,
-                    width: 80,
+                    height: 70.h,
+                    width: 70.h,
                   ),
                   Column(
                     children: [
                       Text(
                         "PocketRoulette",
-                        style: lobster(Colors.white, 32, FontWeight.w900),
+                        style: lobster(Colors.white, 32.sp, FontWeight.w900),
                       )
                     ],
                   )
@@ -148,7 +149,7 @@ class _MainPageState extends State<MainPage> {
                         child: CircleAvatar(
                           backgroundColor:
                               const Color.fromARGB(255, 73, 49, 40),
-                          radius: 200,
+                          radius: 200.h,
                           backgroundImage: const AssetImage(
                             "assets/wooden.png",
                           ),
@@ -174,7 +175,7 @@ class _MainPageState extends State<MainPage> {
                               sharedPreferences.setStringList("data", data);
                             },
                             child: Padding(
-                              padding: const EdgeInsets.all(20.0),
+                              padding: EdgeInsets.all(20.0.h),
                               child: FortuneWheel(
                                 duration: const Duration(milliseconds: 9500),
                                 styleStrategy: const AlternatingStyleStrategy(),
@@ -205,7 +206,7 @@ class _MainPageState extends State<MainPage> {
                                         child: AlertDialog(
                                           contentPadding: EdgeInsets.zero,
                                           content: Container(
-                                            padding: const EdgeInsets.all(20),
+                                            padding: EdgeInsets.all(20.h),
                                             decoration: ShapeDecoration(
                                               gradient: const LinearGradient(
                                                 begin: Alignment(0.00, -1.00),
@@ -217,7 +218,7 @@ class _MainPageState extends State<MainPage> {
                                               ),
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
-                                                    BorderRadius.circular(16),
+                                                    BorderRadius.circular(16.h),
                                               ),
                                               shadows: const [
                                                 BoxShadow(
@@ -228,7 +229,7 @@ class _MainPageState extends State<MainPage> {
                                                 )
                                               ],
                                             ),
-                                            height: 250,
+                                            height: 250.h,
                                             child: Center(
                                               child: Stack(
                                                 children: [
@@ -252,12 +253,12 @@ class _MainPageState extends State<MainPage> {
                                                                 style: lobster(
                                                                     Colors
                                                                         .black,
-                                                                    30,
+                                                                    30.sp,
                                                                     FontWeight
                                                                         .w900),
                                                               ),
-                                                              const SizedBox(
-                                                                height: 20,
+                                                              SizedBox(
+                                                                height: 20.h,
                                                               ),
                                                               Text(
                                                                 items[snapshot
@@ -268,12 +269,12 @@ class _MainPageState extends State<MainPage> {
                                                                 style: spacegrotesk(
                                                                     Colors
                                                                         .white,
-                                                                    16,
+                                                                    16.sp,
                                                                     FontWeight
                                                                         .w700),
                                                               ),
-                                                              const SizedBox(
-                                                                height: 20,
+                                                              SizedBox(
+                                                                height: 20.h,
                                                               ),
                                                               GestureDetector(
                                                                 onTap: () {
@@ -284,12 +285,11 @@ class _MainPageState extends State<MainPage> {
                                                                 },
                                                                 child:
                                                                     Container(
-                                                                  padding: const EdgeInsets
-                                                                      .symmetric(
+                                                                  padding: EdgeInsets.symmetric(
                                                                       vertical:
-                                                                          10,
+                                                                          10.h,
                                                                       horizontal:
-                                                                          30),
+                                                                          30.w),
                                                                   decoration: BoxDecoration(
                                                                       borderRadius:
                                                                           BorderRadius.circular(
@@ -301,7 +301,7 @@ class _MainPageState extends State<MainPage> {
                                                                     style: lobster(
                                                                         Colors
                                                                             .white,
-                                                                        20,
+                                                                        20.sp,
                                                                         FontWeight
                                                                             .bold),
                                                                   ),
@@ -386,8 +386,8 @@ class _MainPageState extends State<MainPage> {
                                             ),
                                             child: Center(
                                               child: Container(
-                                                height: 100,
-                                                width: 50,
+                                                height: 100.h,
+                                                width: 50.w,
                                                 color: i % 2 != 0
                                                     ? const Color(0xFFAE1318)
                                                     : Colors.black,
@@ -425,8 +425,8 @@ class _MainPageState extends State<MainPage> {
                                           const HistoryPage()));
                             },
                             child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 15, horizontal: 50),
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 15.h, horizontal: 50.w),
                                 decoration: ShapeDecoration(
                                   gradient: const LinearGradient(
                                     begin: Alignment(0.00, -1.00),
@@ -451,7 +451,7 @@ class _MainPageState extends State<MainPage> {
                                 child: Text(
                                   "HISTORY",
                                   style: spacegrotesk(
-                                      Colors.black, 24, FontWeight.bold),
+                                      Colors.black, 24.sp, FontWeight.bold),
                                 )),
                           ))
                     ],
